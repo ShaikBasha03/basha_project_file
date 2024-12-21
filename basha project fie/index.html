@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bill Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Online Bill Payment</h1>
+        <form id="billPaymentForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="billType">Bill Type:</label>
+                <select id="billType" name="billType" required>
+                    <option value="">Select Bill Type</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Water">Water</option>
+                    <option value="Internet">Internet</option>
+                    <option value="Gas">Gas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount (in USD):</label>
+                <input type="number" id="amount" name="amount" required min="1">
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required maxlength="16" pattern="\d{16}">
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required maxlength="3" pattern="\d{3}">
+            </div>
+            <button type="submit" class="submit-btn">Pay Now</button>
+        </form>
+    </div>
+
+    <script src="s.js"></script>
+</body>
+
+</html>
